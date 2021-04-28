@@ -1,17 +1,26 @@
 {
-  "name": "git-branch-cleaner",
+  "name": "@nbazille/git-branch-cleaner",
   "version": "1.0.0",
   "description": "Clean your local branches",
-  "main": "src/index.ts",
   "repository": "https://github.com/oltodo/git-branch-cleaner",
   "author": "Nicolas Bazille <oltodo@msn.com>",
   "license": "MIT",
+  "bin": {
+    "gbc": "bin/index.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "package.json"
+  ],
   "scripts": {
-    "build": "tsc",
+    "clean": "rm -rf dist",
+    "build": "yarn clean && tsc",
     "start": "tsc && node dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src --ext .js,.ts",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prepublishOnly": "yarn build"
   },
   "devDependencies": {
     "@types/inquirer": "7.3.1",

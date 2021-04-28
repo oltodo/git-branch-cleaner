@@ -42,6 +42,7 @@
     "*.{js,ts}": "eslint --fix"
   },
   "dependencies": {
+    "chalk": "4.1.1",
     "inquirer": "8.0.0",
     "simple-git": "2.38.0"
   }

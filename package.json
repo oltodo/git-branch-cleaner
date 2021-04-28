@@ -1,0 +1,34 @@
+{
+  "name": "git-branch-cleaner",
+  "version": "1.0.0",
+  "description": "Clean your local branches",
+  "main": "src/index.ts",
+  "repository": "https://github.com/oltodo/git-branch-cleaner",
+  "author": "Nicolas Bazille <oltodo@msn.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src --ext .js,.ts",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "4.22.0",
+    "@typescript-eslint/parser": "4.22.0",
+    "eslint": "7.25.0",
+    "eslint-config-airbnb-base": "14.2.1",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-prettier": "3.4.0",
+    "husky": "6.0.0",
+    "lint-staged": "10.5.4",
+    "prettier": "2.2.1",
+    "ts-node": "9.1.1",
+    "tsc": "1.20150623.0",
+    "typescript": "4.2.4"
+  },
+  "lint-staged": {
+    "*.{js,ts}": "eslint --fix"
+  }
+}

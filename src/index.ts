@@ -4,7 +4,7 @@ import chalk from 'chalk';
 
 (async function main() {
   const git = simpleGit();
-  const { all: branches } = await git.branchLocal();
+  const { all: branches, current: currentBranch } = await git.branchLocal();
 
   if (branches.length === 1) {
     throw new Error('You only have one branch');
@@ -28,9 +28,12 @@ import chalk from 'chalk';
           ? `${branch} ${chalk.gray.italic('merged')}`
           : branch,
         value: branch,
-        toto: 'tutu',
       })),
   });
+
+  if (selectedBranches.includes(currentBranch)) {
+    await git.checkout(mainBranch);
+  }
 
   await git.deleteLocalBranches(selectedBranches, true);
 })();

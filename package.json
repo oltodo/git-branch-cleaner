@@ -1,6 +1,6 @@
 {
   "name": "git-branch-clearer",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Clean your local branches",
   "repository": "https://github.com/oltodo/git-branch-cleaner",
   "author": "Nicolas Bazille <oltodo@msn.com>",

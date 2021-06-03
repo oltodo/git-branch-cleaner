@@ -1,10 +1,14 @@
 {
-  "name": "@nbazille/git-branch-cleaner",
-  "version": "1.0.0",
+  "name": "git-branch-clearer",
+  "version": "1.1.0",
   "description": "Clean your local branches",
   "repository": "https://github.com/oltodo/git-branch-cleaner",
   "author": "Nicolas Bazille <oltodo@msn.com>",
   "license": "MIT",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "bin": {
     "gbc": "bin/index.js"
   },
@@ -20,7 +24,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src --ext .js,.ts",
     "prepare": "husky install",
-    "prepublishOnly": "yarn build"
+    "release": "release-it"
   },
   "devDependencies": {
     "@types/inquirer": "7.3.1",
@@ -34,16 +38,25 @@
     "husky": "6.0.0",
     "lint-staged": "10.5.4",
     "prettier": "2.2.1",
+    "release-it": "14.7.0",
     "ts-node": "9.1.1",
     "tsc": "1.20150623.0",
     "typescript": "4.2.4"
-  },
-  "lint-staged": {
-    "*.{js,ts}": "eslint --fix"
   },
   "dependencies": {
     "chalk": "4.1.1",
     "inquirer": "8.0.0",
     "simple-git": "2.38.0"
+  },
+  "lint-staged": {
+    "*.{js,ts}": "eslint --fix"
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    },
+    "hooks": {
+      "before:init": "yarn build"
+    }
   }
 }

@@ -4,7 +4,9 @@ import chalk from 'chalk';
 
 (async function main() {
   const git = simpleGit();
-  const { all: branches, current: currentBranch } = await git.branchLocal();
+  const { all: branches, current: currentBranch } = await git.branch({
+    '--sort': 'committerdate',
+  });
 
   if (branches.length === 1) {
     throw new Error('You only have one branch');

@@ -5,7 +5,7 @@ import chalk from 'chalk';
 (async function main() {
   const git = simpleGit();
   const { all: branches, current: currentBranch } = await git.branch({
-    '--sort': 'committerdate',
+    '--sort': '-committerdate',
   });
 
   if (branches.length === 1) {

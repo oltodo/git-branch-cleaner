@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "yarn clean && tsc",
+    "build": "clean && tsc",
     "start": "ts-node src",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src --ext .js,.ts",
@@ -56,7 +56,8 @@
       "release": true
     },
     "hooks": {
-      "before:init": "yarn build"
+      "before:init": "pnpm build"
     }
-  }
+  },
+  "packageManager": "pnpm@10.3.0+sha512.ee592eda8815a8a293c206bb0917c4bb0ff274c50def7cbc17be05ec641fc2d1b02490ce660061356bd0d126a4d7eb2ec8830e6959fb8a447571c631d5a2442d"
 }
